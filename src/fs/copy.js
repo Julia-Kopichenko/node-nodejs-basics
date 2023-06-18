@@ -7,11 +7,11 @@ const DESTINATION_FOLDER_PATH = `${FOLDER_FS_PATH}/${DESTINATION_FOLDER_NAME}`;
 
 const copy = async () => {
   try {
-    if (await checkFolderExists(DESTINATION_FOLDER_PATH)) {
-      throw new Error(`${ERROR_MSG}! Destination folder files_copy already exists`);
-    }
     if (!(await checkFolderExists(FOLDER_FILES_PATH))) {
       throw new Error(`${ERROR_MSG}! Files folder doesn't exists`);
+    }
+    if (await checkFolderExists(DESTINATION_FOLDER_PATH)) {
+      throw new Error(`${ERROR_MSG}! Destination folder files_copy already exists`);
     }
 
     await mkdir(DESTINATION_FOLDER_PATH, { recursive: true });
