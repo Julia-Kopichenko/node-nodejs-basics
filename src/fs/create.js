@@ -1,13 +1,13 @@
 import { writeFile } from 'fs/promises';
 import { FOLDER_FILES_PATH, ERROR_MSG } from './constants.js';
 
-const FILE_NAME = 'fresh.txt';
-const FILE_CONTENT = 'I am fresh and young';
-const FILE_PATH = `${FOLDER_FILES_PATH}/${FILE_NAME}`;
+const fileName = 'fresh.txt';
+const fileContent = 'I am fresh and young';
+const filePath = `${FOLDER_FILES_PATH}/${fileName}`;
 
 const create = async () => {
   try {
-    await writeFile(FILE_PATH, FILE_CONTENT, {
+    await writeFile(filePath, fileContent, {
       flag: 'wx',
     });
   } catch {
