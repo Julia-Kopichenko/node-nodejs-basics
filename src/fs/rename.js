@@ -12,10 +12,10 @@ const rename = async () => {
     try {
       await access(NEW_FILE_PATH);
       throw new Error(`${ERROR_MSG}! ProperFilename.md already exists`);
-    } catch (error) {
+    } catch {
       await renameFile(ORIGIN_FILE_PATH, NEW_FILE_PATH);
     }
-  } catch (error) {
+  } catch {
     throw new Error(`${ERROR_MSG}! There's no file wrongFilename.txt`);
   }
 };

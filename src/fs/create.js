@@ -10,8 +10,8 @@ const create = async () => {
     await writeFile(FILE_PATH, FILE_CONTENT, {
       flag: 'wx',
     });
-  } catch (error) {
-    throw new Error(`${ERROR_MSG}! ${error}`);
+  } catch {
+    throw new Error(ERROR_MSG);
   }
 };
 

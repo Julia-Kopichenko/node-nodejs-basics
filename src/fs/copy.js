@@ -21,8 +21,8 @@ const copy = async () => {
     const copyPromises = fileNames.map((fileName) => copyFile(`${FOLDER_FILES_PATH}/${fileName}`, `${DESTINATION_FOLDER_PATH}/${fileName}`));
 
     await Promise.all(copyPromises);
-  } catch (error) {
-    throw new Error(`${ERROR_MSG}! ${error}`);
+  } catch {
+    throw new Error(ERROR_MSG);
   }
 };
 
